@@ -22,6 +22,8 @@ class GraphResource():
       filename = ''
       if search_type == 'p':
         graph.busca_em_profundidade()
+        graph.shortest_path()
+        filename = graph.gen_graph_image()
       elif search_type == 'l':
         graph.busca_em_largura()
         graph.shortest_path()
@@ -86,10 +88,14 @@ class Graph():
   def busca_em_profundidade(self):
     queue = []
     queue.append(self.origin)
+    last = -1
     while len(queue) > 0:
       node = queue.pop()
       if self.nodes_visited[node] == 0:
         self.nodes_visited[node] = 1
+        if last != -1:
+          self.pred[last] = node
+        last = node
 
         if node == self.destiny:
           break
