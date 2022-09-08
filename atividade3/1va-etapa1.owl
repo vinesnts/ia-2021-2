@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#"
+     xml:base="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#possuem -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#possuem">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Gato"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Habitat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#vivem -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#vivem">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Leão"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Onça"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Floresta"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Savana"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Animal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Animal">
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Habitat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#AnimalSelvagem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#AnimalSelvagem">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Felino"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Cachorro -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Cachorro">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Cão"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Canino"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Canino -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Canino">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Animal"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Felino"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Cão -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Cão">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Canino"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Felino -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Felino">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Floresta -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Floresta">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Habitat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Gato -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Gato">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Felino"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Habitat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Habitat"/>
+    
+
+
+    <!-- http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Leão -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Leão">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#AnimalSelvagem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Onça -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Onça">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#AnimalSelvagem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Savana -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Savana">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Habitat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Selva -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Selva">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Habitat"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Floresta"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Savana"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Selva"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Gato"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Leão"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/vinesnts/ontologies/2022/7/untitled-ontology-2#Onça"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
