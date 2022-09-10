@@ -28,8 +28,11 @@ class GraphResource():
         graph.busca_em_largura()
         graph.shortest_path()
         filename = graph.gen_graph_image()
+      elif search_type == 'a':
+        graph.busca_a_estrela()
+        filename = graph.gen_graph_image()
 
-      if not graph_matrix or search_type not in ('p', 'l'):
+      if not graph_matrix or search_type not in ('p', 'l', 'a'):
         resp.media = {
           'success': False,
           'payload': None,
@@ -67,6 +70,12 @@ class Graph():
     self.pred = []
     self.path = []
     pass
+
+  def busca_a_estrela(self):
+    meu_h = Graph.retorna_h(self.destiny, self.graph)
+    calcular_caminho = Graph.retorna_caminho(self.destiny, self.graph, meu_h)
+    caminhos = calcular_caminho(self.origin)
+    self.path = caminhos
 
   def busca_em_largura(self):
     queue = []
@@ -176,3 +185,69 @@ class Graph():
     filename = f'./atividade2/static/temp-{now}.png'
     plt.savefig(filename)
     return filename
+
+  @staticmethod
+  def retorna_h(destino, node):
+    def h(n):
+        def caminhar(pos, visitados, distancia):
+            caminhos = node[pos]
+            distancias = []
+            visitados.add(pos)
+            if pos == destino:
+                return distancia
+            distancia += 1
+            for novo_pos in caminhos:
+                if novo_pos == destino:
+                    return distancia
+                if not novo_pos in visitados:
+                    try:
+                        distancias.append( caminhar(novo_pos,set(visitados), distancia) )
+                    except:
+                        pass
+            return min(distancias)
+
+
+        try:
+            return caminhar(n,set(), 0)
+        except:
+            return None
+                    
+    return h
+
+  @staticmethod
+  def retorna_caminho(destino, node, meu_h):
+    def meu_f(n):
+        def calculo_f(pos, g_anterior):
+            valor = meu_h(pos)
+            if not valor:
+                raise Exception('Não há caminho para determinado destino')
+            return g_anterior + valor
+        pos = n
+        g = 0
+        path = [pos]
+        try:
+            while True:
+                menor = 999999
+                idx_menor = -1
+                caminhos = node[pos]
+                for caminho in caminhos:
+                    if caminho == destino:
+                        path.append(caminho)
+                        return path
+                    if caminho in path:
+                        continue
+                    heuristica = calculo_f(caminho, g+1)
+                    if heuristica < menor:
+                        menor = heuristica
+                        idx_menor = caminho
+                if idx_menor != -1:
+                    pos = idx_menor
+                    path.append(idx_menor)
+                    g += 1
+                    continue
+                else:
+                    break
+        except:
+            return []
+        return path
+    return meu_f
